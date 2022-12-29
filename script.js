@@ -16,8 +16,6 @@ ourForm1.addEventListener("submit", async (event) => {
 
   let data2 = await data.json();
 
-  // let data3 = data2.json();
-
   let h1 = document.createElement("h2");
 
   h1.textContent = data2.morseCode;
@@ -32,10 +30,6 @@ let encodingFunction = async (value) => {
 
   let url = `http://localhost:8888/encode`;
 
-  // let data = await fetch(url);
-
-  // let res = await data.json();
-
   let data = await fetch(url, {
     method: "POST",
 
@@ -46,21 +40,8 @@ let encodingFunction = async (value) => {
     body: JSON.stringify(value),
   });
 
-  // return res;
-
   return data;
 };
-
-// const postRequest = async (newFood) => {
-//   let res = await fetch("http://localhost:3000/api/food", {
-//     method: "POST",
-//     body: JSON.stringify(newFood),
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   });
-//   return res;
-// };
 
 ourForm2.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -72,8 +53,6 @@ ourForm2.addEventListener("submit", async (event) => {
   let data = await encodedData;
 
   let data2 = await data.json();
-
-  // let data3 = data2.json();
 
   let h1 = document.createElement("h2");
 
@@ -87,13 +66,7 @@ ourForm2.addEventListener("submit", async (event) => {
 });
 
 let decodingFunction = async (value) => {
-  // let url = `http://localhost:8888/encode/${value}`;
-
   let url = `http://localhost:8888/decode`;
-
-  // let data = await fetch(url);
-
-  // let res = await data.json();
 
   let data = await fetch(url, {
     method: "POST",
@@ -104,8 +77,6 @@ let decodingFunction = async (value) => {
 
     body: JSON.stringify(value),
   });
-
-  // return res;
 
   return data;
 };
