@@ -26,8 +26,6 @@ ourForm1.addEventListener("submit", async (event) => {
 });
 
 let encodingFunction = async (value) => {
-  // let url = `http://localhost:8888/encode/${value}`;
-
   let url = `http://localhost:8888/encode`;
 
   let data = await fetch(url, {
