@@ -16,13 +16,9 @@ ourForm1.addEventListener("submit", async (event) => {
 
   let data2 = await data.json();
 
-  let h1 = document.createElement("h2");
+  let form2 = document.getElementById("textString1");
 
-  h1.textContent = data2.morseCode;
-
-  let encodingResult = document.getElementById("encodingResult");
-
-  encodingResult.append(h1);
+  form2.value = data2.morseCode;
 });
 
 let encodingFunction = async (value) => {
@@ -52,15 +48,11 @@ ourForm2.addEventListener("submit", async (event) => {
 
   let data2 = await data.json();
 
-  let h1 = document.createElement("h2");
+  let form1 = document.getElementById("textString");
 
-  h1.textContent = data2.morseCode;
+  console.log(data2.morseCode);
 
-  console.log(data2);
-
-  let encodingResult = document.getElementById("decodingResult");
-
-  encodingResult.append(h1);
+  form1.value = data2.morseCode;
 });
 
 let decodingFunction = async (value) => {
