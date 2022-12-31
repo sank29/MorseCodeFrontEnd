@@ -18,6 +18,8 @@ ourForm1.addEventListener("submit", async (event) => {
 
   let form2 = document.getElementById("textString1");
 
+  console.log(data2);
+
   form2.value = data2.morseCode;
 });
 
