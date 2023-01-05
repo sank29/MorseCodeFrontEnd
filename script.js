@@ -24,7 +24,10 @@ ourForm1.addEventListener("submit", async (event) => {
 });
 
 let encodingFunction = async (value) => {
-  let url = `http://localhost:8888/encode`;
+  let url = `http://morsecode-env.eba-hypyvbnw.us-east-1.elasticbeanstalk.com/encode`;
+  // let url = "http://localhost:8888/encode";
+
+  let response = { response: value };
 
   let data = await fetch(url, {
     method: "POST",
@@ -33,8 +36,11 @@ let encodingFunction = async (value) => {
       "Content-Type": "application/json",
     },
 
-    body: JSON.stringify(value),
+    body: JSON.stringify(response),
   });
+
+  // let data2 = await data.json();
+  // console.log(data2);
 
   return data;
 };
@@ -58,7 +64,10 @@ ourForm2.addEventListener("submit", async (event) => {
 });
 
 let decodingFunction = async (value) => {
-  let url = `http://localhost:8888/decode`;
+  let url = `http://morsecode-env.eba-hypyvbnw.us-east-1.elasticbeanstalk.com/decode`;
+  // let url = "http://localhost:8888/decode";
+
+  let response = { response: value };
 
   let data = await fetch(url, {
     method: "POST",
@@ -67,7 +76,7 @@ let decodingFunction = async (value) => {
       "Content-Type": "application/json",
     },
 
-    body: JSON.stringify(value),
+    body: JSON.stringify(response),
   });
 
   return data;
